@@ -7,6 +7,10 @@ export default async function Page({ params }) {
 
   const response = await getNewsData(undefined, undefined, articleId);
 
+  if (response.status !== 200) {
+    throw new Error(response.data.results.message);
+  }
+
   const article = response.data.results[0];
 
   return (
