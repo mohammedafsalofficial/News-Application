@@ -1,4 +1,7 @@
-import { truncateDescription } from "@/app/_utils/helper/helperUtils";
+import {
+  formatDate,
+  truncateDescription,
+} from "@/app/_utils/helper/helperUtils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,7 +16,7 @@ export default function NewsCard({
 }) {
   return (
     <Link
-      href={`news/${article_id}`}
+      href={`/news-article/${article_id}`}
       className="bg-gray-200 p-4 rounded-lg max-w-[700px] flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0 sm:space-x-4 hover:bg-gray-300 transition-transform duration-200 transform hover:scale-105 shadow hover:shadow-lg"
     >
       <div className="flex-1 space-y-2">
@@ -39,7 +42,7 @@ export default function NewsCard({
           </div>
           <span className="h-5 w-[2px] bg-gray-400"></span>
           <p className="text-gray-600 hover:text-gray-800 transition-colors duration-200">
-            {pubDate}
+            {formatDate(pubDate)}
           </p>
         </div>
       </div>
