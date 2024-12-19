@@ -1,16 +1,16 @@
 import { latestNewsApi } from "./axiosConfig";
 
-export default async function getNewsData(language, page, articleId) {
+export default async function getNewsData({ languageId, pageId, articleId }) {
   try {
     const params = {};
     if (articleId) {
       params.id = articleId;
     } else {
-      if (language !== "all") {
-        params.language = language;
+      if (languageId !== "all") {
+        params.language = languageId;
       }
-      if (page !== undefined) {
-        params.page = page;
+      if (pageId !== undefined) {
+        params.page = pageId;
       }
     }
 

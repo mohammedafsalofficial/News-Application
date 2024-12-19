@@ -5,7 +5,7 @@ import getNewsData from "@/app/_utils/axios/getNewsData";
 export default async function Page({ params }) {
   const { articleId } = await params;
 
-  const response = await getNewsData(undefined, undefined, articleId);
+  const response = await getNewsData({ articleId });
 
   if (response.status !== 200) {
     throw new Error(response.data.results.message);

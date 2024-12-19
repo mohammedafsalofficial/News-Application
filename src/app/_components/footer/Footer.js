@@ -1,3 +1,5 @@
+import Subscribe from "./Subscribe";
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white h-52 flex items-center justify-between px-24 mt-auto">
@@ -11,13 +13,7 @@ export default function Footer() {
           <span className="text-2xl text-white">SUBSCRIBE</span> To Newsletter
         </p>
         <p>Email Address</p>
-        <input
-          className="p-2 w-64 rounded-l-md text-black outline-none"
-          placeholder="Enter your email"
-        />
-        <button id="subscribe" className="bg-red-600 text-white py-2 px-4 rounded-r-md">
-          Subscribe
-        </button>
+        <Subscribe />
       </div>
     </footer>
   );
